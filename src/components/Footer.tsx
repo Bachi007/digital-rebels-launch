@@ -1,4 +1,5 @@
-import { Zap, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
+import { Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
 
 const Footer = () => {
   return (
@@ -8,10 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="#home" className="flex items-center gap-2 mb-4">
-              <Zap className="w-8 h-8 text-primary" />
-              <span className="font-display font-bold text-xl tracking-wider">
-                DIGITAL<span className="text-primary">REBELS</span>
-              </span>
+              <img src={logo} alt="Digital Rebels" className="h-12 w-auto" />
             </a>
             <p className="text-muted-foreground max-w-sm mb-6">
               Digital Rebels is not a coaching institute. It is a

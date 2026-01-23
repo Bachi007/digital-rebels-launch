@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpeg";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -24,11 +25,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <Zap className="w-8 h-8 text-primary" />
-            <span className="font-display font-bold text-xl tracking-wider">
-              DIGITAL<span className="text-primary">REBELS</span>
-            </span>
+          <a href="#home" className="flex items-center gap-3">
+            <img src={logo} alt="Digital Rebels" className="h-10 md:h-12 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
