@@ -10,10 +10,34 @@ const navLinks = [
   { name: "Why Us", href: "#why-us" },
   { name: "Who Should Join", href: "#who-should-join" },
   { name: "Contact", href: "#contact" },
+  { name: "FAQs", href: "#faq" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleNavClick = (href: string) => {
+    setIsOpen(false);
+
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const handleBookDemo = () => {
+    setIsOpen(false); 
+    const contactSection = document.querySelector("#contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   return (
     <motion.nav
@@ -25,8 +49,15 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3">
-            <img src={logo} alt="Digital Rebels" className="h-10 md:h-12 w-auto" />
+          <a
+            href="#home"
+            className="flex items-center gap-3"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("#home");
+            }}
+          >
+            <img src={logo} alt="Digital Rebels" className="h-20 md:h-20 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
@@ -35,16 +66,25 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 uppercase tracking-wider"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(link.href);
+                }}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-300 uppercase tracking-wider cursor-pointer"
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button - Desktop */}
           <div className="hidden md:block">
-            <Button variant="rebel" size="lg">
+            <Button
+              variant="rebel"
+              size="lg"
+              onClick={handleBookDemo}
+              className="cursor-pointer"
+            >
               Book Free Demo
             </Button>
           </div>
@@ -73,13 +113,21 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2 uppercase tracking-wider"
-                  onClick={() => setIsOpen(false)}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2 uppercase tracking-wider cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }}
                 >
                   {link.name}
                 </a>
               ))}
-              <Button variant="rebel" className="w-full mt-2">
+              {/* CTA Button - Mobile */}
+              <Button
+                variant="rebel"
+                className="w-full mt-2 cursor-pointer"
+                onClick={handleBookDemo}
+              >
                 Book Free Demo
               </Button>
             </div>

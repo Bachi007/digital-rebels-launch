@@ -45,12 +45,12 @@ const ContactSection = () => {
 
             {/* Zoho Form Placeholder */}
             <div className="bg-muted/50 rounded-xl p-8 border border-dashed border-border text-center">
-              <p className="text-muted-foreground mb-4">
+              {/* <p className="text-muted-foreground mb-4">
                 Zoho Form Integration
               </p>
               <p className="text-sm text-muted-foreground/70">
                 Embed your Zoho form here with iframe
-              </p>
+              </p> */}
 
               {/* Demo Form Fields */}
               <div className="mt-6 space-y-4 text-left">
@@ -60,15 +60,33 @@ const ContactSection = () => {
                   className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                 />
                 <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-                />
-                <input
                   type="tel"
                   placeholder="Phone Number"
                   className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                 />
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
+                />
+                {/* <select className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-muted-foreground">
+                  <option>Select Course</option>
+                  <option>Java with Gen AI</option>
+                  <option>Mean Stack</option>
+                  <option>Mern Stack</option>
+                </select> */}
+                <select className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-muted-foreground">
+                  <option>Qualification</option>
+                  <option>B.Tech</option>
+                  <option>Bsc/BCA</option>
+                  <option>Msc/MCA</option>
+                </select>
+                <select className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-muted-foreground">
+                  <option>Year Of Passing</option>
+                  <option>2026</option>
+                  <option>2025</option>
+                  <option>2024</option>
+                </select>
                 <select className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-muted-foreground">
                   <option>I am a...</option>
                   <option>College Student</option>
@@ -99,8 +117,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Call Us</h4>
-                  <p className="text-muted-foreground">+91 98765 43210</p>
-                  <p className="text-muted-foreground">+91 98765 43211</p>
+                  <p className="text-muted-foreground">+91 90590 65724</p>
+                  <p className="text-muted-foreground">+91 93908 29318</p>
                 </div>
               </div>
             </div>
