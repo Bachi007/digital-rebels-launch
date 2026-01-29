@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { GraduationCap, UserSearch, Briefcase, RefreshCw, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const personas = [
   {
@@ -120,10 +121,12 @@ const WhoShouldJoin = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <Button variant="rebel" size="xl">
+         <Link to="eligibility">
+           <Button variant="rebel" size="xl">
             Check If You Qualify
             <ArrowRight className="w-5 h-5" />
           </Button>
+         </Link>
         </motion.div>
       </div>
     </section>
